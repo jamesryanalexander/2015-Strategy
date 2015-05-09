@@ -355,7 +355,7 @@ while ( ( $row = $results->fetch_assoc() ) && ( $i < $limit ) ) {
 				</fieldset>
 			</div>
 		</div>
-			<?php include 'lcapage-strategy.php'; ?>
+			<?php include 'page-strategy.php'; ?>
 		</div>
 	</body>
 </html>
