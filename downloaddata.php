@@ -29,13 +29,13 @@ if ( $mysql->connect_error ) {
 $gettype = ( !empty( $_GET['data'] ) ) ? $_GET['data'] : ""; // grab type of data to send
 
 if ( $gettype === 'metadata' ) {
-	$select = 'SELECT user,country,homewiki,globaledits,metaedits,metaregistration FROM strategycomments';
+	$select = 'SELECT user,country,homewiki,globaledits,metaedits,metaregistration FROM strategycomments_2015';
 	$headers = array('user','country','homewiki','globaledits','metaedits','metaregistration');
 } elseif ( $gettype === 'comments' ) {
-	$select = 'SELECT comment FROM strategycomments';
+	$select = 'SELECT comment FROM strategycomments_2015';
 	$headers = array('comment');
 } elseif ( $gettype === 'all' ) {
-	$select = 'SELECT user,country,homewiki,globaledits,metaedits,metaregistration,comment FROM strategycomments';
+	$select = 'SELECT user,country,homewiki,globaledits,metaedits,metaregistration,comment FROM strategycomments_2015';
 	$headers = array('user','country','homewiki','globaledits','metaedits','metaregistration','comment');
 } else {
 	$gettype = '';

@@ -277,13 +277,13 @@ if ( isset( $usertable['mwtoken'] ) && isset( $_POST['page'] ) ) {
 
 		}
 
-		$insertemplate = 'INSERT INTO strategycomments (page,user,country,homewiki,globaledits,metaedits,metaregistration,comment,timestamp) VALUES (?,?,?,?,?,?,?,?,?)';
+		$insertemplate = 'INSERT INTO strategycomments_2015 (page,user,country,homewiki,globaledits,metaedits,metaregistration,comment,timestamp) VALUES (?,?,?,?,?,?,?,?,?)';
 		$submittime = gmdate( "Y-m-d H:i:s", time() );
 
 		//purge any data from this page already stored for now
 
 		if ($mainkey === $first) {
-			$purgesql = 'DELETE FROM strategycomments WHERE page='.$pageid;
+			$purgesql = 'DELETE FROM strategycomments_2015 WHERE page='.$pageid;
 			$mysql->query( $purgesql );
 		}
 

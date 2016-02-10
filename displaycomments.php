@@ -29,7 +29,7 @@ if ( $mysql->connect_error ) {
 	echo 'Database connection fail: '  . $mysql->connect_error, E_USER_ERROR;
 }
 
-$countryrequest = 'SELECT DISTINCT country FROM strategycomments';
+$countryrequest = 'SELECT DISTINCT country FROM strategycomments_2015';
 
 $countryquery = $mysql->query( $countryrequest );
 
@@ -41,7 +41,7 @@ while ( $crow = $countryquery->fetch_assoc() ) {
 	$countries[] = $crow['country'];
 }
 
-$homerequest = 'SELECT DISTINCT homewiki FROM strategycomments';
+$homerequest = 'SELECT DISTINCT homewiki FROM strategycomments_2015';
 
 $homequery = $mysql->query( $homerequest );
 
@@ -53,14 +53,14 @@ while ( $hrow = $homequery->fetch_assoc() ) {
 	$homewikis[] = $hrow['homewiki'];
 }
 
-$lastupdaterequest = 'SELECT timestamp FROM strategycomments ORDER BY timestamp DESC LIMIT 1';
+$lastupdaterequest = 'SELECT timestamp FROM strategycomments_2015 ORDER BY timestamp DESC LIMIT 1';
 
 $lastupdatequery = $mysql->query( $lastupdaterequest );
 $lastupdatearray = $lastupdatequery->fetch_assoc();
 $lastupdate = $lastupdatearray['timestamp'];
 
 
-$sql = 'Select * FROM strategycomments'; // basic query
+$sql = 'Select * FROM strategycomments_2015'; // basic query
 
 $offset = ( !empty( $_GET['offset'] ) ) ? intval( $_GET['offset'] ) : 0; // offset starts at 0
 
